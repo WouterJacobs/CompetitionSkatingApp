@@ -9,12 +9,12 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <HorizontalStackLayout Grid.Row="0" >
-            <Button Text="New"  BackgroundColor="White" TextColor="Black" Clicked="Button_Clicked"></Button>
-            <Button Text="Load"  BackgroundColor="White" TextColor="Black"></Button>
-            <Button Text="Save" BackgroundColor="White" TextColor="Black"></Button>
-            <Button Text="print" BackgroundColor="White" TextColor="Black"></Button>
-            <Button Text="Settings" BackgroundColor="White" TextColor="Black"></Button>
+        <HorizontalStackLayout Grid.Row="0" Background="Beige">
+            <ImageButton x:Name="newCompetitionButton" Source="new_event.png" BackgroundColor="White" Clicked="newEventButton_Clicked" WidthRequest="48" HeightRequest="48" Margin="10,0,0,0" Background="Beige"></ImageButton>
+            <ImageButton x:Name="loadButton" Source="load.png" BackgroundColor="White" Clicked="loadButton_Clicked" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige"></ImageButton>
+            <ImageButton x:Name="saveButton" Source="save.png" BackgroundColor="White" Clicked="saveButton_Clicked" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige"></ImageButton>
+            <ImageButton x:Name="printButton" Source="print.png" BackgroundColor="White" Clicked="printButton_Clicked" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige"></ImageButton>
+            <ImageButton x:Name="settingsButton" Source="settings.png" BackgroundColor="White" Clicked="settingsButton_Clicked" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige"  ></ImageButton>
         </HorizontalStackLayout>
     </Grid>
 </ContentPage>
