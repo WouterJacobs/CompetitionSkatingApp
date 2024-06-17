@@ -8,6 +8,13 @@ namespace CompetitionSkatingApp.Domain.Interfaces
 {
     public interface IEvent
     {
-        
+        public string Name { get; set; }
+        public string Organiser { get; set; }
+        public DateOnly StartDate { get; set; }
+        public DateOnly EndDate { get; set; }
+        public ICompetitionLocation Location { get; set; } 
+        public ISchool School { get; set; }
+        public string Description { get; set; }
+        public IEventTeam EventTeam { get; set; }
     }
 }
