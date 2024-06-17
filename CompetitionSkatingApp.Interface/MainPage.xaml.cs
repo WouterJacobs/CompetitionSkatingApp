@@ -1,14 +1,18 @@
 ﻿
+using CompetitionSkatingApp.Interface.ViewModels;
 using System.Diagnostics;
 
 namespace CompetitionSkatingApp.Interface
 {
     public partial class MainPage : ContentPage
     {
+        private readonly MainPageViewModel _mainPageViewModel;
 
-        public MainPage()
+        public MainPage(MainPageViewModel mainPageViewModel)
         {
             InitializeComponent();
+            _mainPageViewModel = mainPageViewModel;
+            BindingContext = _mainPageViewModel; // Set binding context here
         }
 
         private void newEventButton_Clicked(object sender, EventArgs e)
