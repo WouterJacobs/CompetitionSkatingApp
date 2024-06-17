@@ -15,16 +15,18 @@
         </Grid.ColumnDefinitions>
 
         <HorizontalStackLayout Grid.Row="0" Grid.ColumnSpan="2" Background="Beige">
-            <ImageButton x:Name="newCompetitionButton" Source="new_event.png" BackgroundColor="White" Command="{Binding NewEventCommand}" WidthRequest="48" HeightRequest="48" Margin="10,0,0,0" Background="Beige" />
-            <ImageButton x:Name="loadButton" Source="load.png" BackgroundColor="White" Command="{Binding LoadEventCommand}" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige" />
-            <ImageButton x:Name="saveButton" Source="save.png" BackgroundColor="White" Command="{Binding SaveEventCommand}" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige" />
-            <ImageButton x:Name="printButton" Source="print.png" BackgroundColor="White" Command="{Binding PrintCommand}" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige" />
-            <ImageButton x:Name="settingsButton" Source="settings.png" BackgroundColor="White" Command="{Binding SettingsCommand}" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige" />
+            <ImageButton x:Name="newEventButton" Source="new_event.png" BackgroundColor="White" Clicked="newEventButton_Clicked" WidthRequest="48" HeightRequest="48" Margin="10,0,0,0" Background="Beige" />
+            <ImageButton x:Name="loadButton" Source="load.png" BackgroundColor="White" Clicked="loadButton_Clicked" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige" />
+            <ImageButton x:Name="saveButton" Source="save.png" BackgroundColor="White" Clicked="saveButton_Clicked" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige" />
+            <ImageButton x:Name="printButton" Source="print.png" BackgroundColor="White" Clicked="printButton_Clicked" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige" />
+            <ImageButton x:Name="settingsButton" Source="settings.png" BackgroundColor="White" Clicked="settingsButton_Clicked" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige" />
         </HorizontalStackLayout>
         <Grid Grid.Row="1" Grid.Column="0" BackgroundColor="Aquamarine"></Grid>
 
         <!-- Placeholder for CompetitionsSideBar HERE IS THE PROBLEM -->
         <Controls:CompetitionsControl Grid.Row="1" Grid.Column="0" />
+        
+        
         <Label Grid.Row="1" Grid.Column="1" Text="{Binding Hello}"></Label>
 
 

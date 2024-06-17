@@ -24,6 +24,7 @@ namespace CompetitionSkatingApp.Interface.ViewModels
             set { _hello = value; }
         }
 
+
     }
 }
 

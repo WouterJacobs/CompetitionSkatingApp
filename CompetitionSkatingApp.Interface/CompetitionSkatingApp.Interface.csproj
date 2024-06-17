@@ -72,6 +72,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\CompetitionSkatingApp.Domain\CompetitionSkatingApp.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Controls\CompetitionsControl.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
