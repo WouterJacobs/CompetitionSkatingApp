@@ -12,7 +12,7 @@ namespace CompetitionSkatingApp.Domain.Interfaces
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
         public IEventLocation Location { get; set; } 
-        public ISchool School { get; set; }
+        public IEventSchool School { get; set; }
         public string Description { get; set; }
         public IEventTeam EventTeam { get; set; }
         public IList<ICompetition> Competitions { get; set; }
