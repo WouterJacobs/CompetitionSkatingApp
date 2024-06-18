@@ -2,10 +2,18 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CompetitionSkatingApp.Interface.Controls.CompetitionsControl">
+    <ScrollView>
     <VerticalStackLayout>
         <Label 
             Text="{Binding EventName}"
+            TextColor="Black"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            Text="2e text"
+            TextColor="Black"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
+        </ScrollView>
 </ContentView>

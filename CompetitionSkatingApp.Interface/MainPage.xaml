@@ -21,7 +21,7 @@
             <ImageButton x:Name="printButton" Source="print.png" BackgroundColor="White" Clicked="printButton_Clicked" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige" />
             <ImageButton x:Name="settingsButton" Source="settings.png" BackgroundColor="White" Clicked="settingsButton_Clicked" WidthRequest="50" HeightRequest="50" Margin="10,0,0,0" Background="Beige" />
         </HorizontalStackLayout>
-        <Grid Grid.Row="1" Grid.Column="0" BackgroundColor="Aquamarine"></Grid>
+        <Grid Grid.Row="1" Grid.Column="0" BackgroundColor="WhiteSmoke"></Grid>
 
         <!-- Placeholder for CompetitionsSideBar HERE IS THE PROBLEM -->
         <Controls:CompetitionsControl x:Name="CompetitionsControl" Grid.Row="1" Grid.Column="0" />        
