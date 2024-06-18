@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace CompetitionSkatingApp.Interface.ViewModels
 {
-    public class MainPageViewModel
+    public class MainPageViewModel : ViewModelBase
     {
         
         public MainPageViewModel()

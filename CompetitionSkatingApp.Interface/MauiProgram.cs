@@ -18,10 +18,10 @@ namespace CompetitionSkatingApp.Interface
 
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddTransient<MainPageViewModel>();
-
+            builder.Services.AddSingleton<ICompetitionControlViewModel, CompetitionControlViewModel>();
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
             
 

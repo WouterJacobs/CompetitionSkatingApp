@@ -4,7 +4,7 @@
              x:Class="CompetitionSkatingApp.Interface.Controls.CompetitionsControl">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="{Binding EventName}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>

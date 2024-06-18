@@ -1,5 +1,6 @@
 ﻿
 using CompetitionSkatingApp.Domain;
+using CompetitionSkatingApp.Interface.Controls;
 using CompetitionSkatingApp.Interface.ViewModels;
 using System.Diagnostics;
 
@@ -8,11 +9,20 @@ namespace CompetitionSkatingApp.Interface
     public partial class MainPage : ContentPage
     {
         private readonly MainPageViewModel _mainPageViewModel;
-        public MainPage(MainPageViewModel mainPageViewModel)
+        private readonly ICompetitionControlViewModel _competitionControlViewModel;
+        public MainPage(MainPageViewModel mainPageViewModel, ICompetitionControlViewModel competitionControlViewModel)
         {
             InitializeComponent();
             _mainPageViewModel = mainPageViewModel;
             BindingContext = _mainPageViewModel; // Set binding context here
+            _competitionControlViewModel = competitionControlViewModel;
+
+            // Set the DataContext for CompetitionsControl in the code-behind
+            CompetitionsControl competitionsControl = this.FindByName<CompetitionsControl>("CompetitionsControl");
+            if (competitionsControl != null)
+            {
+                competitionsControl.BindingContext = _competitionControlViewModel;
+            }
         }
 
         private async void newEventButton_Clicked(object sender, EventArgs e)

@@ -24,8 +24,7 @@
         <Grid Grid.Row="1" Grid.Column="0" BackgroundColor="Aquamarine"></Grid>
 
         <!-- Placeholder for CompetitionsSideBar HERE IS THE PROBLEM -->
-        <Controls:CompetitionsControl Grid.Row="1" Grid.Column="0" />
-        
+        <Controls:CompetitionsControl x:Name="CompetitionsControl" Grid.Row="1" Grid.Column="0" />        
         
         <Label Grid.Row="1" Grid.Column="1" Text="{Binding Hello}"></Label>
 
