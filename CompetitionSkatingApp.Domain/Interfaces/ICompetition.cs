@@ -8,5 +8,14 @@ namespace CompetitionSkatingApp.Domain.Interfaces
 {
     public interface ICompetition
     {
+        string Name { get; set; }
+        IDiscipline Discipline { get; set; }
+        int AmountOfDances { get; set; }
+        AgeCategory AgeCategory { get; set; }
+        IList<IOfficial> Adjudicators { get; set; }
+        IOfficial Chairperson { get; set; }
+        IList<ICouple> Couples { get; set; }
+        IList<IRound> Rounds { get; set; }
+
     }
 }
