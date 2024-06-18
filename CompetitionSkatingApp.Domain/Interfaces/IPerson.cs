@@ -8,6 +8,7 @@ namespace CompetitionSkatingApp.Domain.Interfaces
 {
     public interface IPerson
     {
-        string Name { get; set; }
+        string FirstName { get; set; }
+        string LastName { get; set; }
     }
 }
