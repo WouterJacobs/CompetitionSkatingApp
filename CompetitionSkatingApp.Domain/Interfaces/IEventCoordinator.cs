@@ -1,6 +1,7 @@
 ﻿namespace CompetitionSkatingApp.Domain.Interfaces
 {
-    public interface IOfficial : IPerson
+    public interface IEventCoordinator : IPerson
     {
+
     }
 }

@@ -2,11 +2,11 @@
 {
     public interface IEventTeam
     {
-        public EventCoordinator Organizer { get; set; }
-        public EventCoordinator MasterOfCeremony { get; set; }
+        public IEventCoordinator Organizer { get; set; }
+        public IEventCoordinator MasterOfCeremony { get; set; }
         public IList<IOfficial> Chairman { get; set; }
-        public EventCoordinator Diskjockey { get; set; }
-        public IList<EventCoordinator> Scrutineers { get; set; }
+        public IEventCoordinator Diskjockey { get; set; }
+        public IList<IEventCoordinator> Scrutineers { get; set; }
 
     }
 }
