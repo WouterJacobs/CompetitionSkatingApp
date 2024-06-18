@@ -9,5 +9,7 @@ namespace CompetitionSkatingApp.Domain
 {
     internal class Adjudicator : IOfficial
     {
+        public string FirstName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string LastName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }
