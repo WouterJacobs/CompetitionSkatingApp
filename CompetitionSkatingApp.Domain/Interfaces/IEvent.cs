@@ -15,5 +15,6 @@ namespace CompetitionSkatingApp.Domain.Interfaces
         public ISchool School { get; set; }
         public string Description { get; set; }
         public IEventTeam EventTeam { get; set; }
+        public IList<ICompetition> Competitions { get; set; }
     }
 }
