@@ -1,9 +1,7 @@
 ﻿namespace CompetitionSkatingApp.Domain.Interfaces
 {
-    public interface ISchool
+    public interface IEventSchool : IClub
     {
-        string Name { get; set; }
-        IAddress Address { get; set; }
         string Owner { get; set; }
     }
 }
