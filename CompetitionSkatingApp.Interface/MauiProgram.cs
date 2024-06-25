@@ -1,4 +1,6 @@
-﻿using CompetitionSkatingApp.Interface.ViewModels;
+﻿using CompetitionSkatingApp.Domain.Factories;
+using CompetitionSkatingApp.Domain.Interfaces;
+using CompetitionSkatingApp.Interface.ViewModels;
 using Microsoft.Extensions.Logging;
 
 namespace CompetitionSkatingApp.Interface
@@ -19,6 +21,10 @@ namespace CompetitionSkatingApp.Interface
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddTransient<MainPageViewModel>();
             builder.Services.AddSingleton<ICompetitionControlViewModel, CompetitionControlViewModel>();
+            
+            // Factories
+            builder.Services.AddTransient<IEventFactory, EventFactory>();
+            builder.Services.AddTransient<ICompetitionFactory, CompetitionFactory>();
 
 #if DEBUG
             builder.Logging.AddDebug();

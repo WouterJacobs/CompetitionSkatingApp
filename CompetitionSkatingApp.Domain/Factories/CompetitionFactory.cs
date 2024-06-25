@@ -7,10 +7,10 @@ using CompetitionSkatingApp.Domain.Interfaces;
 
 namespace CompetitionSkatingApp.Domain.Factories
 {
-    public class CompetitionFactory
+    public class CompetitionFactory : ICompetitionFactory
     {
-        static ICompetition CreateCompetition(string name, Discipline discipline, int amountOfDances,
-            AgeCategory ageCategory, Chairman chairperson)
+        public ICompetition CreateCompetition(string name, Discipline discipline, int amountOfDances,
+            AgeCategory ageCategory, IOfficial chairperson)
         {
             Competition competition = new Competition(name, discipline, amountOfDances, ageCategory, chairperson);
             return competition;
