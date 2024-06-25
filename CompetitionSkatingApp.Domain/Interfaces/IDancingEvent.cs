@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CompetitionSkatingApp.Domain.Interfaces
 {
-    public interface IEvent
+    public interface IDancingEvent
     {
         public string Name { get; set; }
         public DateOnly StartDate { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CompetitionSkatingApp.Domain
 {
-    internal class Event : IEvent
+    internal class DancingEvent : IDancingEvent
     {
         private string _name;
         private DateOnly _startDate;
@@ -19,7 +19,7 @@ namespace CompetitionSkatingApp.Domain
         private IList<ICompetition> _competitions;
 
 
-        internal Event(string name, DateOnly startDate, DateOnly endDate, IEventLocation location, IEventSchool school,
+        internal DancingEvent(string name, DateOnly startDate, DateOnly endDate, IEventLocation location, IEventSchool school,
             string description, IEventTeam eventTeam)
         {
             _name = name ?? throw new ArgumentNullException(nameof(name));
