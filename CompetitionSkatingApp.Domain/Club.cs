@@ -9,7 +9,30 @@ namespace CompetitionSkatingApp.Domain
 {
     internal class Club : IClub
     {
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public IAddress Address { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private string _name;
+        private IAddress _address;
+
+        internal Club(string name, IAddress address)
+        {
+            _name = name ?? throw new ArgumentNullException(nameof(name));
+            _address = address ?? throw new ArgumentNullException(nameof(address));
+        }
+
+        public string Name
+        {
+            get => _name;
+            set => _name = value;
+        }
+
+        public IAddress Address
+        {
+            get => _address;
+            set => _address = value;
+        }
+
+        public override string ToString()
+        {
+            return $"Name: {_name}, Address: {_address}";
+        }
     }
 }
