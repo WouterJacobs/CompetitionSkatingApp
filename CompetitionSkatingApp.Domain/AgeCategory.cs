@@ -3,6 +3,9 @@
     public enum AgeCategory
     {
         UNDER35,
-        OVER35
+        OVER35,
+        JUNIOR,
+        YOUTH,
+        ADULT
     }
 }
