@@ -9,19 +9,25 @@ namespace CompetitionSkatingApp.Domain
 {
     internal class Address : IAddress
     {
+        private string _country;
         private string _city;
         private string _postalCode;
         private string _street;
         private int _number;
 
-        internal Address(string city, string postalCode, string street, int number)
+        internal Address(string country, string city, string postalCode, string street, int number)
         {
+            _country = country ?? throw new ArgumentNullException(nameof(country));
             _city = city ?? throw new ArgumentNullException(nameof(city));
             _postalCode = postalCode ?? throw new ArgumentNullException(nameof(postalCode));
             _street = street ?? throw new ArgumentNullException(nameof(street));
             _number = number;
         }
-
+        public string Country
+        {
+            get => _country;
+            set => _country = value;
+        }
         public string City
         {
             get => _city;
@@ -44,6 +50,11 @@ namespace CompetitionSkatingApp.Domain
         {
             get => _number;
             set => _number = value;
+        }
+
+        public override string ToString()
+        {
+            return $"City: {_city}, PostalCode: {_postalCode}, Street: {_street}, Number: {_number}";
         }
     }
 }
