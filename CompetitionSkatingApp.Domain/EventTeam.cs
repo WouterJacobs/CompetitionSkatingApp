@@ -11,7 +11,7 @@ namespace CompetitionSkatingApp.Domain
     {
         public IEventCoordinator Organizer { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public IEventCoordinator MasterOfCeremony { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public IList<IOfficial> Chairman { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IList<IOfficial> Chairmans { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public IEventCoordinator Diskjockey { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public IList<IEventCoordinator> Scrutineers { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
