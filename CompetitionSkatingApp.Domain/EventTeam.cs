@@ -15,8 +15,8 @@ namespace CompetitionSkatingApp.Domain
         private IEventCoordinator _diskjockey;
         private IList<IEventCoordinator> _scrutineers;
 
-        internal EventTeam(IEventCoordinator organizer, IEventCoordinator masterOfCeremony, IList<IOfficial> chairmans,
-            IEventCoordinator diskjockey, IList<IEventCoordinator> scrutineers)
+        internal EventTeam(IEventCoordinator organizer, IEventCoordinator masterOfCeremony,
+            IEventCoordinator diskjockey)
         {
             _organizer = organizer ?? throw new ArgumentNullException(nameof(organizer));
             _masterOfCeremony = masterOfCeremony ?? throw new ArgumentNullException(nameof(masterOfCeremony));
