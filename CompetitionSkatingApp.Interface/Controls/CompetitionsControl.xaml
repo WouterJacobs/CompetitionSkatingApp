@@ -3,17 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CompetitionSkatingApp.Interface.Controls.CompetitionsControl">
     <ScrollView>
-    <VerticalStackLayout>
-        <Label 
+        <VerticalStackLayout>
+            <Label 
             Text="{Binding EventName}"
             TextColor="Black"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Label 
+            <Label 
             Text="2e text"
             TextColor="Black"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-    </VerticalStackLayout>
-        </ScrollView>
+            <ListView ItemsSource="{Binding Competitions}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Text="{Binding Name}" FontAttributes="Bold" Grid.Row="0" TextColor="Black" Clicked="Button_Clicked"/>
+                                <Label Text="{Binding Discipline}" FontAttributes="Italic" VerticalOptions="End" Grid.Row="1" TextColor="Black"/>
+                                <Label Text="{Binding AmountOfDances}" FontAttributes="Italic" VerticalOptions="End" Grid.Row="2" TextColor="Black"/>
+                                <Label Text="{Binding AgeCategory}" FontAttributes="Italic" VerticalOptions="End" Grid.Row="3" TextColor="Black"/>
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentView>

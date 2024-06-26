@@ -17,4 +17,10 @@ public partial class CompetitionsControl : ContentView
     {
         InitializeComponent();
     }
+
+    private async void Button_Clicked(object sender, EventArgs e)
+    {
+         await App.Current.MainPage.DisplayAlert("test", "Would you like to add a new event", "Yes", "No");
+
+    }
 }
