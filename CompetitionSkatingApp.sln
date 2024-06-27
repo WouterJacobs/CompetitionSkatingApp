@@ -5,7 +5,11 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompetitionSkatingApp.Interface", "CompetitionSkatingApp.Interface\CompetitionSkatingApp.Interface.csproj", "{9EBEEDC8-0DF1-457F-9577-6506181C3B48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompetitionSkatingApp.Domain", "CompetitionSkatingApp.Domain\CompetitionSkatingApp.Domain.csproj", "{A7E038D5-D229-401E-AF09-7ADF8E5366E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompetitionSkatingApp.Domain", "CompetitionSkatingApp.Domain\CompetitionSkatingApp.Domain.csproj", "{A7E038D5-D229-401E-AF09-7ADF8E5366E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompetitionSkatingApp.Infrastructure", "CompetitionSkatingApp.Infrastructure\CompetitionSkatingApp.Infrastructure.csproj", "{D7609B67-FFBB-4F99-828A-84354590906C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompititionSkatingApp.AppLogic", "CompititionSkatingApp.AppLogic\CompititionSkatingApp.AppLogic.csproj", "{588E0972-7D5B-42CD-B455-BEDCB55C1159}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,14 @@ Global
 		{A7E038D5-D229-401E-AF09-7ADF8E5366E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7E038D5-D229-401E-AF09-7ADF8E5366E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7E038D5-D229-401E-AF09-7ADF8E5366E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7609B67-FFBB-4F99-828A-84354590906C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7609B67-FFBB-4F99-828A-84354590906C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7609B67-FFBB-4F99-828A-84354590906C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7609B67-FFBB-4F99-828A-84354590906C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{588E0972-7D5B-42CD-B455-BEDCB55C1159}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588E0972-7D5B-42CD-B455-BEDCB55C1159}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588E0972-7D5B-42CD-B455-BEDCB55C1159}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588E0972-7D5B-42CD-B455-BEDCB55C1159}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
