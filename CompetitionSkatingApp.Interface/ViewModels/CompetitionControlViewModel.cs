@@ -30,7 +30,7 @@ namespace CompetitionSkatingApp.Interface.ViewModels
 
         public CompetitionControlViewModel(ICompetitionFactory competitionFactory)
         {
-            _eventName = "test";
+            _eventName = "EVENT";
             _competitionFactory = competitionFactory;
 			SeedCompetitions();
         }
