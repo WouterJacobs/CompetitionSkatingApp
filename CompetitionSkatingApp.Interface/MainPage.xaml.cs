@@ -1,5 +1,6 @@
 ﻿
 using CompetitionSkatingApp.Domain;
+using CompetitionSkatingApp.Domain.Util;
 using CompetitionSkatingApp.Interface.Controls;
 using CompetitionSkatingApp.Interface.ViewModels;
 using System.Diagnostics;
@@ -28,6 +29,11 @@ namespace CompetitionSkatingApp.Interface
         private async void newEventButton_Clicked(object sender, EventArgs e)
         {
             bool answer = await DisplayAlert("Add new event", "Would you like to add a new event", "Yes", "No");
+            if (answer)
+            {
+                DbWriter dbWriter = new DbWriter();
+                dbWriter.MakeNewDatabaseFile("Ritmo Cup");
+            }
         }
 
         private async void loadButton_Clicked(object sender, EventArgs e)
