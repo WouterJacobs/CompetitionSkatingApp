@@ -1,34 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CompetitionSkatingApp.Interface.Controls.CompetitionsControl"    
-    >
-    <ScrollView>
-        <VerticalStackLayout>
-            <Label 
-                Text="{Binding EventName}"
-                TextColor="Black"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
-        <ListView ItemsSource="{Binding Competitions}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Button Text="{Binding Name}" FontAttributes="Bold" Grid.Row="0" TextColor="Black" Clicked="Button_Clicked" BackgroundColor="LightGrey"/>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Button Text="Add new Competition" FontAttributes="Bold" Grid.Row="0" TextColor="Black" Clicked="Button_Clicked" BackgroundColor="LightGrey"/>
-    </VerticalStackLayout>
-    </ScrollView>
+             x:Class="CompetitionSkatingApp.Interface.Controls.CompetitionsControl">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Scrollable content goes here -->
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout>
+                <Label 
+                    Text="{Binding EventName}"
+                    TextColor="Black"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+                <ListView ItemsSource="{Binding Competitions}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Button Text="{Binding Name}" FontAttributes="Bold" Grid.Row="0" TextColor="Black" Clicked="Button_Clicked" BackgroundColor="LightGrey"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Button fixed at the bottom -->
+        <Button x:Name="AddCompetionButton" Text="Add new Competition" Clicked="AddCompetionButton_Clicked" IsEnabled="{Binding CanAddCompetition}" 
+                FontAttributes="Bold" TextColor="Black" BackgroundColor="PowderBlue" Grid.Row="1" />
+    </Grid>
 </ContentView>

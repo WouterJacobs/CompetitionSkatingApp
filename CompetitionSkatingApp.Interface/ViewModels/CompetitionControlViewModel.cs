@@ -13,6 +13,19 @@ namespace CompetitionSkatingApp.Interface.ViewModels
     {
         private ICompetitionFactory _competitionFactory;
         private IDancingEvent _dancingEvent;
+        private bool _canAddCompetition;
+        public bool CanAddCompetition
+        {
+            get => _canAddCompetition;
+            set
+            {
+                if (_canAddCompetition != value)
+                {
+                    _canAddCompetition = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
 
         public IDancingEvent DancingEvent
         {
@@ -56,6 +69,7 @@ namespace CompetitionSkatingApp.Interface.ViewModels
         {
             _competitionFactory = competitionFactory;
             _dancingEvent = null;
+            _canAddCompetition = false;
         }
 
         private List<ICompetition> SeedCompetitions()
@@ -63,6 +77,21 @@ namespace CompetitionSkatingApp.Interface.ViewModels
             return new List<ICompetition>
             {
                 _competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
+                _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),_competitionFactory.CreateCompetition("Adult Masterclass Latin new", Domain.Discipline.LATIN, 5, Domain.AgeCategory.ADULT, null),
                 _competitionFactory.CreateCompetition("Adult Amateur Ballroom aha", Domain.Discipline.STANDARD, 4, Domain.AgeCategory.ADULT, null),
             };
         }
@@ -93,6 +122,13 @@ namespace CompetitionSkatingApp.Interface.ViewModels
         protected override void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {
             base.RaisePropertyChanged(propertyName);
+            if (propertyName == nameof(DancingEvent))
+            {
+                CanAddCompetition = DancingEvent != null;
+            }
+
         }
+
+
     }
 }

@@ -28,4 +28,9 @@ public partial class CompetitionsControl : ContentView
         bool answer = await App.Current.MainPage.DisplayAlert("test", "clicking a competition", "Yes", "No");
 
     }
+
+    private async void AddCompetionButton_Clicked(object sender, EventArgs e)
+    {
+        bool answer = await App.Current.MainPage.DisplayAlert("Adding Competition", "Do you want to add a Competition", "Yes", "No");
+    }
 }

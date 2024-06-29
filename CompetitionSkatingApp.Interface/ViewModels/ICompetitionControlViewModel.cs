@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CompetitionSkatingApp.Domain.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ namespace CompetitionSkatingApp.Interface.ViewModels
     public interface ICompetitionControlViewModel
     {
         public string EventName { get; set; }
+        public IDancingEvent DancingEvent { get; set; }
+        public bool CanAddCompetition { get; set; }
         public void CreateNewEvent(string eventName);
     }
 }
