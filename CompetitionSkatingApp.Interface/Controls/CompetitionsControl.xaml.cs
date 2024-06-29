@@ -32,5 +32,14 @@ public partial class CompetitionsControl : ContentView
     private async void AddCompetionButton_Clicked(object sender, EventArgs e)
     {
         bool answer = await App.Current.MainPage.DisplayAlert("Adding Competition", "Do you want to add a Competition", "Yes", "No");
+        if (answer)
+        {
+            string competitionName = await App.Current.MainPage.DisplayPromptAsync("Event Name", "What's your event named?");
+            if (!string.IsNullOrEmpty(competitionName))
+            {
+                _competitionControlViewModel.AddCompetitionToEvent(competitionName);
+
+            }
+        }
     }
 }

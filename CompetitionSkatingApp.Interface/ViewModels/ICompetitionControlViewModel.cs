@@ -13,5 +13,6 @@ namespace CompetitionSkatingApp.Interface.ViewModels
         public IDancingEvent DancingEvent { get; set; }
         public bool CanAddCompetition { get; set; }
         public void CreateNewEvent(string eventName);
+        public void AddCompetitionToEvent(string competition);
     }
 }
