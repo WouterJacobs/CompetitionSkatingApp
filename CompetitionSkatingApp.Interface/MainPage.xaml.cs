@@ -50,6 +50,10 @@ namespace CompetitionSkatingApp.Interface
         private async void saveButton_Clicked(object sender, EventArgs e)
         {
             bool answer = await DisplayAlert("Save event", "Would you like to save this event", "Yes", "No");
+            if (answer)
+            {
+                _competitionControlViewModel.UpdateEventDetails();
+            }
         }
 
         private async void printButton_Clicked(object sender, EventArgs e)

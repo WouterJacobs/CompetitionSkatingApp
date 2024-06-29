@@ -43,5 +43,34 @@ namespace CompetitionSkatingApp.Domain.Util
                 writer?.Close();
             }
         }
+        public void UpdateDatabaseFile(IDancingEvent dancingEvent)
+        {
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            };
+
+            try
+            {
+                string filePath = $@"{_filesLocation}\{dancingEvent.Name}.skat";
+                if (File.Exists(filePath))
+                {
+                    using (var writer = File.CreateText(filePath))
+                    {
+                        writer.WriteLine($"Database for {dancingEvent.Name}");
+                        writer.WriteLine(JsonSerializer.Serialize(dancingEvent, options));
+                    }
+                }
+                else
+                {
+                    Debug.WriteLine($"File '{filePath}' not found.");
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+        }
     }
 }
