@@ -7,7 +7,7 @@ namespace CompetitionSkatingApp.Domain
         private string _country;
         private string _city;
 
-        internal EventLocation(string country, string city)
+        public EventLocation(string country, string city)
         {
             _country = country ?? throw new ArgumentNullException(nameof(country));
             _city = city ?? throw new ArgumentNullException(nameof(city));

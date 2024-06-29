@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace CompetitionSkatingApp.Domain
 {
-    internal class EventSchool : IEventSchool
+    public class EventSchool : IEventSchool
     {
         private string _name;
         private IAddress _address;
         private string _owner;
 
-        internal EventSchool(string name, IAddress address, string owner)
+        public EventSchool(string name, IAddress address, string owner)
         {
             _name = name ?? throw new ArgumentNullException(nameof(name));
             _address = address ?? throw new ArgumentNullException(nameof(address));

@@ -1,9 +1,12 @@
 ﻿
 using CompetitionSkatingApp.Domain;
+using CompetitionSkatingApp.Domain.Factories;
+using CompetitionSkatingApp.Domain.Interfaces;
 using CompetitionSkatingApp.Domain.Util;
 using CompetitionSkatingApp.Interface.Controls;
 using CompetitionSkatingApp.Interface.ViewModels;
 using System.Diagnostics;
+using System.Net;
 
 namespace CompetitionSkatingApp.Interface
 {
@@ -15,10 +18,10 @@ namespace CompetitionSkatingApp.Interface
         {
             InitializeComponent();
             _mainPageViewModel = mainPageViewModel;
-            BindingContext = _mainPageViewModel; // Set binding context here
             _competitionControlViewModel = competitionControlViewModel;
 
-            // Set the DataContext for CompetitionsControl in the code-behind
+            BindingContext = _mainPageViewModel;
+
             CompetitionsControl competitionsControl = this.FindByName<CompetitionsControl>("CompetitionsControl");
             if (competitionsControl != null)
             {
@@ -32,8 +35,10 @@ namespace CompetitionSkatingApp.Interface
             if (answer)
             {
                 string eventName = await DisplayPromptAsync("Event Name", "What's your event named?");
-                DbWriter dbWriter = new DbWriter();
-                dbWriter.MakeNewDatabaseFile(eventName);
+                if (!string.IsNullOrEmpty(eventName))
+                {
+                    _competitionControlViewModel.CreateNewEvent(eventName);
+                }
             }
         }
 

@@ -17,6 +17,11 @@ public partial class CompetitionsControl : ContentView
     {
         InitializeComponent();
     }
+    protected override void OnBindingContextChanged()
+    {
+        base.OnBindingContextChanged();
+        _competitionControlViewModel = BindingContext as ICompetitionControlViewModel;
+    }
 
     private async void Button_Clicked(object sender, EventArgs e)
     {

@@ -9,5 +9,6 @@ namespace CompetitionSkatingApp.Interface.ViewModels
     public interface ICompetitionControlViewModel
     {
         public string EventName { get; set; }
+        public void CreateNewEvent(string eventName);
     }
 }

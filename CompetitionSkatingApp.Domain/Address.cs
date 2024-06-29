@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CompetitionSkatingApp.Domain
 {
-    internal class Address : IAddress
+    public class Address : IAddress
     {
         private string _country;
         private string _city;
@@ -15,7 +15,7 @@ namespace CompetitionSkatingApp.Domain
         private string _street;
         private int _number;
 
-        internal Address(string country, string city, string postalCode, string street, int number)
+        public Address(string country, string city, string postalCode, string street, int number)
         {
             _country = country ?? throw new ArgumentNullException(nameof(country));
             _city = city ?? throw new ArgumentNullException(nameof(city));

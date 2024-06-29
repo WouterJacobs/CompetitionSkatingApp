@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CompetitionSkatingApp.Domain
 {
-    internal class EventTeam : IEventTeam
+    public class EventTeam : IEventTeam
     {
         private IEventCoordinator _organizer;
         private IEventCoordinator _masterOfCeremony;
@@ -15,7 +15,7 @@ namespace CompetitionSkatingApp.Domain
         private IEventCoordinator _diskjockey;
         private IList<IEventCoordinator> _scrutineers;
 
-        internal EventTeam(IEventCoordinator organizer, IEventCoordinator masterOfCeremony,
+        public EventTeam(IEventCoordinator organizer, IEventCoordinator masterOfCeremony,
             IEventCoordinator diskjockey)
         {
             _organizer = organizer ?? throw new ArgumentNullException(nameof(organizer));

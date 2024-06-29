@@ -5,11 +5,11 @@
     <ScrollView>
         <VerticalStackLayout>
             <Label 
-            Text="{Binding EventName}"
-            TextColor="Black"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-            <ListView ItemsSource="{Binding Competitions}" >
+                Text="{Binding EventName}"
+                TextColor="Black"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <ListView ItemsSource="{Binding Competitions}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -26,7 +26,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentView>
