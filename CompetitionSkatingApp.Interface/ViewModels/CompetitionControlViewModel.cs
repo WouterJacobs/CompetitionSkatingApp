@@ -1,6 +1,7 @@
 ﻿using CompetitionSkatingApp.Domain;
 using CompetitionSkatingApp.Domain.Factories;
 using CompetitionSkatingApp.Domain.Interfaces;
+using CompetitionSkatingApp.Domain.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -84,6 +85,9 @@ namespace CompetitionSkatingApp.Interface.ViewModels
             dancingEvent.Competitions = SeedCompetitions();
 
             DancingEvent = dancingEvent;
+
+            DbWriter dbWriter = new();
+            dbWriter.MakeNewDatabaseFile(dancingEvent);
         }
 
         protected override void RaisePropertyChanged([CallerMemberName] string propertyName = null)

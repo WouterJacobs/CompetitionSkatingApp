@@ -1,8 +1,11 @@
-﻿using System;
+﻿using CompetitionSkatingApp.Domain.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace CompetitionSkatingApp.Domain.Util
@@ -16,13 +19,20 @@ namespace CompetitionSkatingApp.Domain.Util
             _filesLocation = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         }
 
-        public void MakeNewDatabaseFile(string eventname)
+        public void MakeNewDatabaseFile(IDancingEvent dancingEvent)
         {
             StreamWriter writer = null;
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            };
+
             try
             {
-                writer = File.CreateText($@"{_filesLocation}\{eventname}.skat");
-                writer.WriteLine($"Database for {eventname}");
+                writer = File.CreateText($@"{_filesLocation}\{dancingEvent.Name}.skat");
+                writer.WriteLine($"Database for {dancingEvent.Name}");
+                writer.WriteLine(JsonSerializer.Serialize(dancingEvent, options));
             }
             catch (Exception e)
             {
