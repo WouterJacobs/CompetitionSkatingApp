@@ -9,12 +9,19 @@ namespace CompetitionSkatingApp.Domain.Util
 {
     public class DbWriter
     {
+        private string _filesLocation;
+
+        public DbWriter()
+        {
+            _filesLocation = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        }
+
         public void MakeNewDatabaseFile(string eventname)
         {
             StreamWriter writer = null;
             try
             {
-                writer = File.CreateText($@"C:\Users\Wouter\Documents\{eventname}.skat");
+                writer = File.CreateText($@"{_filesLocation}\{eventname}.skat");
                 writer.WriteLine($"Database for {eventname}");
             }
             catch (Exception e)

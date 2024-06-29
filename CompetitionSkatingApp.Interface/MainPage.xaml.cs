@@ -31,8 +31,9 @@ namespace CompetitionSkatingApp.Interface
             bool answer = await DisplayAlert("Add new event", "Would you like to add a new event", "Yes", "No");
             if (answer)
             {
+                string eventName = await DisplayPromptAsync("Event Name", "What's your event named?");
                 DbWriter dbWriter = new DbWriter();
-                dbWriter.MakeNewDatabaseFile("Ritmo Cup");
+                dbWriter.MakeNewDatabaseFile(eventName);
             }
         }
 
