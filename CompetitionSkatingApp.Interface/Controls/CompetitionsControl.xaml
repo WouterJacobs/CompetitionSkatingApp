@@ -4,29 +4,29 @@
              x:Class="CompetitionSkatingApp.Interface.Controls.CompetitionsControl">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Scrollable content goes here -->
-        <ScrollView Grid.Row="0">
+        <!-- Label with background color -->
+        <Frame Grid.Row="0" BackgroundColor="PowderBlue" Padding="0" HasShadow="False" CornerRadius="0">
+            <Label Text="{Binding EventName}" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" Padding="0,8,0,8"/>
+        </Frame>
+
+        <!-- Scrollable content -->
+        <ScrollView Grid.Row="1">
             <VerticalStackLayout>
-                <Label 
-                    Text="{Binding EventName}"
-                    TextColor="Black"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
                 <ListView ItemsSource="{Binding Competitions}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <Button Text="{Binding Name}" FontAttributes="Bold" Grid.Row="0" TextColor="Black" Clicked="Button_Clicked" BackgroundColor="LightGrey"/>
                                 </Grid>
@@ -39,6 +39,6 @@
 
         <!-- Button fixed at the bottom -->
         <Button x:Name="AddCompetionButton" Text="Add new Competition" Clicked="AddCompetionButton_Clicked" IsEnabled="{Binding CanAddCompetition}" 
-                FontAttributes="Bold" TextColor="Black" BackgroundColor="PowderBlue" Grid.Row="1" />
+                FontAttributes="Bold" TextColor="Black" BackgroundColor="PowderBlue" Grid.Row="2"/>
     </Grid>
 </ContentView>
