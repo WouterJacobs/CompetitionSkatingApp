@@ -45,6 +45,12 @@ namespace CompetitionSkatingApp.Interface
         private async void loadButton_Clicked(object sender, EventArgs e)
         {
             bool answer = await DisplayAlert("Load event", "Would you like to load an event", "Yes", "No");
+            if (answer)
+            {
+                FileResult? file = await FilePicker.PickAsync(null);
+                string? s = file?.FullPath.ToString();
+                _competitionControlViewModel.LoadDancingEvent(s);
+            }
         }
 
         private async void saveButton_Clicked(object sender, EventArgs e)
