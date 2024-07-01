@@ -13,31 +13,26 @@ namespace CompetitionSkatingApp.Domain.Util
             {
                 JsonElement root = doc.RootElement;
 
-                // Access eventTeam element directly
                 JsonElement eventTeamElement = root;
 
-                // Check for "chairmans" array (handle missing property)
                 JsonElement chairmansArray;
                 if (eventTeamElement.TryGetProperty("chairmans", out chairmansArray))
                 {
                     if (chairmansArray.EnumerateArray().Any())
                     {
-                        // Assuming the first element is the chief judge (modify if needed)
                         JsonElement firstChairmanElement = chairmansArray.EnumerateArray().FirstOrDefault();
                         return JsonSerializer.Deserialize<Chairman>(firstChairmanElement.GetRawText(), options);
                     }
                 }
 
-                // Check for "adjudicators" property (handle missing property)
                 JsonElement adjudicatorElement;
                 if (eventTeamElement.TryGetProperty("adjudicators", out adjudicatorElement))
                 {
                     return JsonSerializer.Deserialize<Adjudicator>(adjudicatorElement.GetRawText(), options);
                 }
 
-                // No valid official found (handle error or return default)
                 Console.WriteLine("No valid official found in 'eventTeam'.");
-                return null;  // Or modify this based on your application's requirements
+                return null; 
             }
         }
 

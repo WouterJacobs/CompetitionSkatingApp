@@ -48,8 +48,17 @@ namespace CompetitionSkatingApp.Interface
             if (answer)
             {
                 FileResult? file = await FilePicker.PickAsync(null);
-                string? s = file?.FullPath.ToString();
-                _competitionControlViewModel.LoadDancingEvent(s);
+                string? filePath = file?.FullPath.ToString();
+                try
+                {
+                    _competitionControlViewModel.LoadDancingEvent(filePath);
+                }
+                catch (Exception)
+                {
+                    await DisplayAlert("Error", "File could not be loaded.\nPlease select a '.skat' file.", "OK");
+
+                }
+
             }
         }
 

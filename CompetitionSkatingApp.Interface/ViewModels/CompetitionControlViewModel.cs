@@ -102,7 +102,7 @@ namespace CompetitionSkatingApp.Interface.ViewModels
             {
                 ICompetition newCompetition = _competitionFactory.CreateCompetition(competitionName, Discipline.STANDARD, 5, AgeCategory.UNDER35, null);
                 _dancingEvent.Competitions.Add(newCompetition);
-                RaisePropertyChanged(nameof(Competitions)); // Notify that the Competitions property has changed
+                RaisePropertyChanged(nameof(Competitions)); 
             }
         }
         public void LoadDancingEvent(string path)
@@ -110,13 +110,10 @@ namespace CompetitionSkatingApp.Interface.ViewModels
             IDancingEvent newDancingEvent = DbReader.LoadDancingEvent(path);
             DancingEvent = newDancingEvent;
             RaisePropertyChanged(nameof(DancingEvent));
-            RaisePropertyChanged(nameof(Competitions)); // Notify that the Competitions property has changed
+            RaisePropertyChanged(nameof(Competitions)); 
         }
         public void UpdateEventDetails()
         {
-            // Modify the dancingEvent details as needed
-            //RaisePropertyChanged(nameof(DancingEvent)); // Ensure UI updates if necessary
-
             DbWriter dbWriter = new DbWriter();
             dbWriter.UpdateDatabaseFile(DancingEvent); // Update the existing file
         }

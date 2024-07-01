@@ -46,13 +46,12 @@ namespace CompetitionSkatingApp.Domain.Util
                 else
                 {
                     Console.WriteLine($"File '{filePath}' not found.");
-                    // Consider throwing an exception or returning an error object
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine($"Error loading file: {e.Message}");
-                // Consider throwing an exception or returning an error object
+                throw new Exception("Error in the reader");
             }
             return null;
         }
