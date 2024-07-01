@@ -26,17 +26,18 @@ namespace CompetitionSkatingApp.Domain.Util
                         WriteIndented = true,
                         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                         Converters =
-                        {
-                            new InterfaceConverter<IEventLocation, EventLocation>(),
-                            new InterfaceConverter<IEventSchool, EventSchool>(),
-                            new InterfaceConverter<IEventTeam, EventTeam>(),
-                            new InterfaceConverter<IEventCoordinator, EventCoordinator>(),
-                            new InterfaceConverter<IAddress, Address>(),
-                            new InterfaceConverter<ICompetition, Competition>(),
-                            new InterfaceConverter<ICouple, Couple>(),
-                            new InterfaceConverter<IPerson, EventCoordinator>(), // Assuming EventCoordinator is used for Person
-                            new OfficialConverter() // Custom converter for IOfficial
-                        }
+                {
+                    new InterfaceConverter<IEventLocation, EventLocation>(),
+                    new InterfaceConverter<IEventSchool, EventSchool>(),
+                    new InterfaceConverter<IEventTeam, EventTeam>(),
+                    new InterfaceConverter<IEventCoordinator, EventCoordinator>(),
+                    new InterfaceConverter<IAddress, Address>(),
+                    new InterfaceConverter<ICompetition, Competition>(),
+                    new InterfaceConverter<ICouple, Couple>(),
+                    // Assuming a separate implementation for IPerson
+                    new InterfaceConverter<IPerson, Person>(),
+                    new OfficialConverter() // Custom converter for IOfficial
+                }
                     };
 
                     // Deserialize JSON into DancingEvent object
@@ -45,13 +46,16 @@ namespace CompetitionSkatingApp.Domain.Util
                 else
                 {
                     Console.WriteLine($"File '{filePath}' not found.");
+                    // Consider throwing an exception or returning an error object
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine($"Error loading file: {e.Message}");
+                // Consider throwing an exception or returning an error object
             }
             return null;
         }
+
     }
 }

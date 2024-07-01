@@ -29,6 +29,13 @@ namespace CompetitionSkatingApp.Domain
             _couples = new List<ICouple>();
             _rounds = new List<IRound>();
         }
+        public Competition()
+        {
+            _adjudicators = new List<IOfficial>();
+            _couples = new List<ICouple>();
+            _rounds = new List<IRound>();
+        }
+
 
         public string Name
         {

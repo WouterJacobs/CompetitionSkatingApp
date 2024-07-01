@@ -108,6 +108,9 @@ namespace CompetitionSkatingApp.Interface.ViewModels
         public void LoadDancingEvent(string path)
         {
             IDancingEvent newDancingEvent = DbReader.LoadDancingEvent(path);
+            DancingEvent = newDancingEvent;
+            RaisePropertyChanged(nameof(DancingEvent));
+            RaisePropertyChanged(nameof(Competitions)); // Notify that the Competitions property has changed
         }
         public void UpdateEventDetails()
         {

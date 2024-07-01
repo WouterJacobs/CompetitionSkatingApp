@@ -32,6 +32,11 @@ namespace CompetitionSkatingApp.Domain
             _competitions = new List<ICompetition>();
         }
 
+        public DancingEvent()
+        {
+            _competitions = new List<ICompetition>();
+        }
+
         public string Name
         {
             get => _name;

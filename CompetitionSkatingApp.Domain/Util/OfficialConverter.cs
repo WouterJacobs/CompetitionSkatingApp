@@ -13,24 +13,31 @@ namespace CompetitionSkatingApp.Domain.Util
             {
                 JsonElement root = doc.RootElement;
 
-                if (root.TryGetProperty("type", out JsonElement typeElement))
+                // Access eventTeam element directly
+                JsonElement eventTeamElement = root;
+
+                // Check for "chairmans" array (handle missing property)
+                JsonElement chairmansArray;
+                if (eventTeamElement.TryGetProperty("chairmans", out chairmansArray))
                 {
-                    string type = typeElement.GetString();
-                    switch (type)
+                    if (chairmansArray.EnumerateArray().Any())
                     {
-                        case "Adjudicator":
-                            return JsonSerializer.Deserialize<Adjudicator>(root.GetRawText(), options);
-                            //TODO FIX THE CHAIRMANS/ CHAIRPERSONS PROBLEM
-                        case "Chairperson":
-                            return JsonSerializer.Deserialize<Chairman>(root.GetRawText(), options);
-                        default:
-                            throw new JsonException($"Unknown IOfficial type: {type}");
+                        // Assuming the first element is the chief judge (modify if needed)
+                        JsonElement firstChairmanElement = chairmansArray.EnumerateArray().FirstOrDefault();
+                        return JsonSerializer.Deserialize<Chairman>(firstChairmanElement.GetRawText(), options);
                     }
                 }
-                else
+
+                // Check for "adjudicators" property (handle missing property)
+                JsonElement adjudicatorElement;
+                if (eventTeamElement.TryGetProperty("adjudicators", out adjudicatorElement))
                 {
-                    throw new JsonException("Missing type discriminator property.");
+                    return JsonSerializer.Deserialize<Adjudicator>(adjudicatorElement.GetRawText(), options);
                 }
+
+                // No valid official found (handle error or return default)
+                Console.WriteLine("No valid official found in 'eventTeam'.");
+                return null;  // Or modify this based on your application's requirements
             }
         }
 
@@ -39,4 +46,6 @@ namespace CompetitionSkatingApp.Domain.Util
             JsonSerializer.Serialize(writer, value, options);
         }
     }
+
 }
+
